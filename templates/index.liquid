@@ -1,4 +1,4 @@
-{% if collections.new.products.size != 0 %}
+{% if front_page_show_items and collections.new.products.size != 0 %}
       <article id="products">
         
 {% paginate collections.new.products by 50 %}
