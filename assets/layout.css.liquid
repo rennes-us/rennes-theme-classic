@@ -1,0 +1,190 @@
+/*
+ *
+ * Main Layout
+ *
+ */
+
+html, body
+{
+	height: 100%;
+}
+
+body
+{
+	margin: 0;
+}
+
+
+#wrap
+{
+	min-height: 100%;
+}
+
+/* Header */
+
+header
+{
+	padding-top: 5px;
+	padding-bottom: 30px;
+}
+
+#home-link
+{
+	display: block;
+	width: 155px; /* width of the contained image */
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* The cart items in the upper-right corner */
+#cart-summary
+{
+	float: right;
+	margin-right: 10px;
+	margin-top: 2px;
+}
+
+
+/* Category navigation */
+
+/* I don't think I actually use a nav tag anywhere... */
+nav
+{
+  float: left;
+}
+
+ul#categories
+{
+    float: left;
+	padding: 0;
+	margin: 0;
+	padding-left: 10px;
+	width: 180px;
+}
+
+ul#categories > li > a:hover
+{
+	font-weight: bold;
+}
+
+ul#categories > li
+{
+	margin-bottom: 10px;
+}
+
+ul#categories li
+{
+	list-style-type: none;
+}
+
+ul#categories ul
+{
+	display: none;
+	padding-left: 10px;
+	font-size: 80%;
+}
+
+/* Expand active category menu */
+/* This was manageable enough for a short list but it's more and more annoying
+ * for a longer one.  There must be a tidier CSS (non-JS/non-server-side) way of
+ * handling this.
+ */
+ul#categories.black           a[href$="/leather-goods-color"] ~ ul,
+ul#categories.dots            a[href$="/leather-goods-color"] ~ ul,
+ul#categories.cream           a[href$="/leather-goods-color"] ~ ul,
+ul#categories.tan             a[href$="/leather-goods-color"] ~ ul,
+ul#categories.tobacco         a[href$="/leather-goods-color"] ~ ul,
+ul#categories.navy            a[href$="/leather-goods-color"] ~ ul,
+ul#categories.redwood         a[href$="/leather-goods-color"] ~ ul,
+ul#categories.teal            a[href$="/leather-goods-color"] ~ ul,
+ul#categories.red             a[href$="/leather-goods-color"] ~ ul,
+ul#categories.golden          a[href$="/leather-goods-color"] ~ ul,
+ul#categories.pink            a[href$="/leather-goods-color"] ~ ul,
+ul#categories.bags            a[href$="/leather-goods-item"] ~ ul,
+ul#categories.small-goods     a[href$="/leather-goods-item"] ~ ul,
+ul#categories.black           a[href$="/leather-goods"] ~ ul,
+ul#categories.dots            a[href$="/leather-goods"] ~ ul,
+ul#categories.cream           a[href$="/leather-goods"] ~ ul,
+ul#categories.tan             a[href$="/leather-goods"] ~ ul,
+ul#categories.tobacco         a[href$="/leather-goods"] ~ ul,
+ul#categories.navy            a[href$="/leather-goods"] ~ ul,
+ul#categories.redwood         a[href$="/leather-goods"] ~ ul,
+ul#categories.teal            a[href$="/leather-goods"] ~ ul,
+ul#categories.red             a[href$="/leather-goods"] ~ ul,
+ul#categories.golden          a[href$="/leather-goods"] ~ ul,
+ul#categories.pink            a[href$="/leather-goods"] ~ ul,
+ul#categories.bags            a[href$="/leather-goods"] ~ ul,
+ul#categories.small-goods     a[href$="/leather-goods"] ~ ul,
+/*ul#categories.bags            a[href$="/bags"] ~ ul,*/
+ul#categories.totes           a[href$="/bags"] ~ ul,
+ul#categories.duffles         a[href$="/bags"] ~ ul,
+ul#categories.pouches         a[href$="/pouches"] ~ ul,
+ul#categories[class*="pouch"] a[href$="/pouches"] ~ ul,
+ul#categories.dots            a[href$="/pouches"] ~ ul,
+ul#categories.unlined         a[href$="/pouches"] ~ ul,
+ul#categories.wallets         a[href$="/wallets"] ~ ul,
+ul#categories.clothing        a[href$="/clothing"] ~ ul,
+ul#categories.base-range      a[href$="/clothing"] ~ ul,
+ul#categories.brookes-boswell a[href$="/clothing"] ~ ul,
+ul#categories.elsa-esturgie   a[href$="/clothing"] ~ ul,
+ul#categories.esby            a[href$="/clothing"] ~ ul,
+ul#categories.rennes          a[href$="/clothing"] ~ ul,
+ul#categories.lauren-manoogian a[href$="/clothing"] ~ ul,
+ul#categories.sylvain-le-hen  a[href$="/clothing"] ~ ul,
+ul#categories.khadi           a[href$="/clothing"] ~ ul,
+ul#categories.maryam-nassir-zadeh a[href$="/clothing"] ~ ul,
+ul#categories.samuji          a[href$="/clothing"] ~ ul,
+ul#categories.dresses         a[href$="/clothing"] ~ ul,
+ul#categories.tops            a[href$="/clothing"] ~ ul,
+ul#categories.home-goods      a[href$="/home-goods"] ~ ul,
+ul#categories.ceramics        a[href$="/home-goods"] ~ ul,
+ul#categories.dish-towels     a[href$="/home-goods"] ~ ul,
+ul#categories.pillows         a[href$="/home-goods"] ~ ul
+{
+	display: block;
+}
+
+/* Stuff */
+
+main
+{
+	/* Minimum of effective width of nav above */
+	margin-left: 190px;
+	margin-right: 190px;
+    /* Needs at least enough padding at the bottom to account for the footer,
+     * since that won't take up space in a normal way. Should be the same as
+     * the margin-top of the footer's ul.  */
+	padding-bottom: 5em;
+}
+
+/* Footer links */
+
+/* http://www.cssstickyfooter.com/ */
+footer > ul
+{
+    /* top margin is the negative of the total height of the box; this pins the
+     * element at the bottom of the parent element. padding-top plus height should
+     * equal margin-top (negative).  */
+	padding: 0;
+	margin: 0;
+	margin-top: -5em;
+	padding-top: 2em;
+	height: 3em;
+    /* Clear the floating navbar, if the footer ever actually reaches it */
+	clear: both;
+}
+
+footer > ul li
+{
+	display: inline;
+	list-style-type: none;
+	margin-left: 15px;
+}
+
+footer > ul ul
+{
+	display: none;
+	position: relative;
+	margin-top: -2em;
+	bottom: 1em;
+}

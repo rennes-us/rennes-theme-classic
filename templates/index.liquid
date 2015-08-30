@@ -1,0 +1,24 @@
+{% if collections.new.products.size != 0 %}
+      <article id="products">
+        
+{% paginate collections.new.products by 50 %}
+        
+        {% for product in collections.new.products %}
+
+        <section id="product-{{ forloop.index }}" class="product" itemscope itemtype="http://schema.org/Product">
+          <a href="{{ product.url | within: collection }}" title="View {{ product.title | escape }}" class="product-a" itemprop="url">
+            <div class="product-image"><img src="{{ product.images.first | product_img_url : settings.product_thumbnail_size }}" alt="{{ product.title | escape }}" itemprop="image"></div>
+            <div class="product-info"><h2 itemprop="name">{{ product.title }}</h2><p itemprop="offers" itemscope itemtype="http://schema.org/Offer">{{ product.price | money }}</p></div>
+          </a>
+        </section>
+		{% endfor %}
+ 
+    {% if paginate.next.is_link %}
+    <a href="{{ paginate.next.url }}" id="pagination">{{ paginate.next.title }}</a>
+	{% endif %}
+        
+{% endpaginate %}
+
+      </article>
+
+{% endif %}

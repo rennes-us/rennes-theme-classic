@@ -1,0 +1,64 @@
+/* Products page */
+
+#products
+{
+	/* Show a min of 3 and max of 4 products per row; 60 is the 30px padding below times 2 */
+	max-width: {{settings.product_thumbnail_width | plus: 60 | times: settings.horizontal_products_max }}px;
+	min-width: {{settings.product_thumbnail_width | plus: 60 | times: settings.horizontal_products_min }}px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: auto;
+}
+
+.product
+{
+ 	padding: 10px 30px;
+	height: 300px;
+	float: left;
+}
+
+.product > a
+{
+	display: block;
+	text-align: center;
+}
+
+/* http://www.vanseodesign.com/css/vertical-centering/ */
+.product > a > div.product-image
+{
+	/* Max height of this image size */
+	line-height: {{settings.product_thumbnail_width}}px;
+}
+.product > a > div.product-image img
+{
+	vertical-align: middle;
+	width: {{settings.product_thumbnail_width}}px;
+	height: auto;
+}
+
+.product-info
+{
+	padding: 10px;
+	width: 180px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.product-info h2
+{
+	margin: 6px 0;
+	font-size: 80%;
+	font-weight: bold;
+}
+
+.product-info p
+{
+	margin: 3px 0;
+	font-size: 80%;
+}
+
+#images-nav
+{
+	width: 600px;
+}

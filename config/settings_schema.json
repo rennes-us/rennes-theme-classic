@@ -1,0 +1,347 @@
+[
+  {
+    "name": "Welcome",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Instructions"
+      },
+      {
+        "type": "paragraph",
+        "content": "Settings for the second Rennes theme, Summer 2014."
+      }
+    ]
+  },
+  {
+    "name": "Main Settings",
+    "settings": [
+      {
+        "type": "text",
+        "id": "backend_server",
+        "label": "Backend Server"
+      }
+    ]
+  },
+  {
+    "name": "Vacation Mode",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "away_mode",
+        "label": "Enable vacation mode?"
+      },
+      {
+        "type": "textarea",
+        "id": "away_mode_message",
+        "label": "Warning message to show at checkout when away"
+      }
+    ]
+  },
+  {
+    "name": "Front Page",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "front_page_show_items",
+        "label": "Show listing of items in \"new\" category on front page? (Otherwise the background image will display instead.)"
+      }
+    ]
+  },
+  {
+    "name": "Product Listings",
+    "settings": [
+      {
+        "type": "text",
+        "id": "product_thumbnail_size",
+        "label": "Shopify size of product thumbnails",
+        "default": "compact"
+      },
+      {
+        "type": "text",
+        "id": "product_thumbnail_width",
+        "label": "Actual width of product thumbnails in pixels",
+        "default": "210"
+      },
+      {
+        "type": "text",
+        "id": "horizontal_products_min",
+        "label": "Minimum number of products shown across page",
+        "default": "3"
+      },
+      {
+        "type": "text",
+        "id": "horizontal_products_max",
+        "label": "Maximum number of products shown across page",
+        "default": "4"
+      }
+    ]
+  },
+  {
+    "name": "Images",
+    "settings": [
+      {
+        "type": "text",
+        "id": "background_image",
+        "label": "Main Background Image",
+        "default": "background.png"
+      },
+      {
+        "type": "text",
+        "id": "header_image",
+        "label": "Main Header Image",
+        "default": "header.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "text",
+        "id": "font_primary_size",
+        "label": "Primary Font Size",
+        "default": "75%"
+      },
+      {
+        "type": "select",
+        "id": "font_primary",
+        "label": "Regular text",
+        "options": [
+          {
+            "value": "'futura-medium'",
+            "label": "Futura Medium"
+          },
+          {
+            "value": "'Raleway'",
+            "label": "Raleway"
+          },
+          {
+            "value": "'swlink'",
+            "label": "swlink"
+          },
+          {
+            "value": "Helvetica, Arial, sans-serif",
+            "label": "Helvetica\/Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Impact, Charcoal, Helvetica, Arial, sans-serif",
+            "label": "Impact",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif",
+            "label": "Lucida Grande",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Trebuchet MS, sans-serif",
+            "label": "Trebuchet MS",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Verdana, Helvetica, Arial, sans-serif",
+            "label": "Verdana",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Garamond, Baskerville, Caslon, serif",
+            "label": "Garamond",
+            "group": "Serif"
+          },
+          {
+            "value": "Georgia, Utopia, 'Times New Roman', Times, serif",
+            "label": "Georgia",
+            "group": "Serif"
+          },
+          {
+            "value": "Palatino, 'Palatino Linotype', 'Book Antiqua', serif",
+            "label": "Palatino",
+            "group": "Serif"
+          },
+          {
+            "value": "'Times New Roman', Times, serif",
+            "label": "Times New Roman",
+            "group": "Serif"
+          },
+          {
+            "value": "'Courier New', Courier, monospace",
+            "label": "Courier New",
+            "group": "Monospace"
+          },
+          {
+            "value": "Monaco, 'Lucida Console', 'DejaVu Sans Mono', monospace",
+            "label": "Monaco\/Lucida Console",
+            "group": "Monospace"
+          }
+        ],
+        "default": "'Raleway'"
+      },
+      {
+        "type": "select",
+        "id": "font_button",
+        "label": "Buttons",
+        "options": [
+          {
+            "value": "'futura-medium'",
+            "label": "Futura Medium"
+          },
+          {
+            "value": "'Raleway'",
+            "label": "Raleway"
+          },
+          {
+            "value": "'swlink'",
+            "label": "swlink"
+          },
+          {
+            "value": "Helvetica, Arial, sans-serif",
+            "label": "Helvetica\/Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Impact, Charcoal, Helvetica, Arial, sans-serif",
+            "label": "Impact",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif",
+            "label": "Lucida Grande",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Trebuchet MS, sans-serif",
+            "label": "Trebuchet MS",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Verdana, Helvetica, Arial, sans-serif",
+            "label": "Verdana",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Garamond, Baskerville, Caslon, serif",
+            "label": "Garamond",
+            "group": "Serif"
+          },
+          {
+            "value": "Georgia, Utopia, 'Times New Roman', Times, serif",
+            "label": "Georgia",
+            "group": "Serif"
+          },
+          {
+            "value": "Palatino, 'Palatino Linotype', 'Book Antiqua', serif",
+            "label": "Palatino",
+            "group": "Serif"
+          },
+          {
+            "value": "'Times New Roman', Times, serif",
+            "label": "Times New Roman",
+            "group": "Serif"
+          },
+          {
+            "value": "'Courier New', Courier, monospace",
+            "label": "Courier New",
+            "group": "Monospace"
+          },
+          {
+            "value": "Monaco, 'Lucida Console', 'DejaVu Sans Mono', monospace",
+            "label": "Monaco\/Lucida Console",
+            "group": "Monospace"
+          }
+        ],
+        "default": "'swlink'"
+      },
+      {
+        "type": "select",
+        "id": "font_nav",
+        "label": "Navigation Lists",
+        "options": [
+          {
+            "value": "'futura-medium'",
+            "label": "Futura Medium"
+          },
+          {
+            "value": "'Raleway'",
+            "label": "Raleway"
+          },
+          {
+            "value": "'swlink'",
+            "label": "swlink"
+          },
+          {
+            "value": "Helvetica, Arial, sans-serif",
+            "label": "Helvetica\/Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Impact, Charcoal, Helvetica, Arial, sans-serif",
+            "label": "Impact",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif",
+            "label": "Lucida Grande",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Trebuchet MS, sans-serif",
+            "label": "Trebuchet MS",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Verdana, Helvetica, Arial, sans-serif",
+            "label": "Verdana",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Garamond, Baskerville, Caslon, serif",
+            "label": "Garamond",
+            "group": "Serif"
+          },
+          {
+            "value": "Georgia, Utopia, 'Times New Roman', Times, serif",
+            "label": "Georgia",
+            "group": "Serif"
+          },
+          {
+            "value": "Palatino, 'Palatino Linotype', 'Book Antiqua', serif",
+            "label": "Palatino",
+            "group": "Serif"
+          },
+          {
+            "value": "'Times New Roman', Times, serif",
+            "label": "Times New Roman",
+            "group": "Serif"
+          },
+          {
+            "value": "'Courier New', Courier, monospace",
+            "label": "Courier New",
+            "group": "Monospace"
+          },
+          {
+            "value": "Monaco, 'Lucida Console', 'DejaVu Sans Mono', monospace",
+            "label": "Monaco\/Lucida Console",
+            "group": "Monospace"
+          }
+        ],
+        "default": "'swlink'"
+      }
+    ]
+  },
+  {
+    "name": "Buttons",
+    "settings": [
+      {
+        "type": "text",
+        "id": "button_bg_normal",
+        "label": "Button Background Color - Normal"
+      },
+      {
+        "type": "text",
+        "id": "button_bg_hover",
+        "label": "Button Background Color - Hover"
+      }
+    ]
+  }
+]

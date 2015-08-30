@@ -1,0 +1,129 @@
+<div class="section-info">
+    <h3>Instructions</h3>
+    <p>Settings for the second Rennes theme, Summer 2014.</p>
+</div>
+
+	<fieldset>
+      <legend>Main Settings</legend>
+      <table>
+        <tr>
+          <td><label for="backend_server">Backend Server</label></td>
+          <td><input type="text" id="backend_server" name="backend_server" /></td>
+        </tr>
+      </table>
+	</fieldset>
+
+	<fieldset>
+      <legend>Vacation Mode</legend>
+      <table>
+        <tr>
+          <td><label for="away_mode">Enable vacation mode?</label></td>
+          <td><input type="checkbox" id="away_mode" name="away_mode" value="0" /></td>
+        </tr>
+        <tr>
+      	  <td><label for="away_mode_message">Warning message to show at checkout when away</label></td>
+		  <td><textarea class="text" id="away_mode_message" name="away_mode_message" value=""/></td>
+        </tr>
+      </table>
+	</fieldset>
+
+	<fieldset>
+      <legend>Front Page</legend>
+      <table>
+        <tr>
+          <td><label for="front_page_show_items">Show listing of items in "new" category on front page?  (Otherwise the background image will display instead.)</label></td>
+          <td><input type="checkbox" id="away_mode" name="front_page_show_items" value="1" /></td>
+        </tr>
+      </table>
+	</fieldset>
+
+  <fieldset>
+    <legend>Product Listings</legend>
+    <table>
+        <tr>
+          <td><label for="product_thumbnail_size">Shopify size of product thumbnails</label></td>
+          <td><input type="text" id="product_thumbnail_size" name="product_thumbnail_size" value="compact"/></td>
+        </tr>
+        <tr>
+          <td><label for="product_thumbnail_width">Actual width of product thumbnails in pixels</label></td>
+          <td><input type="text" id="product_thumbnail_width" name="product_thumbnail_width" value="210"/></td>
+        </tr>
+        <tr>
+          <td><label for="horizontal_products_min">Minimum number of products shown across page</label></td>
+          <td><input type="text" id="horizontal_products_min" name="horizontal_products_min" value="3"/></td>
+        </tr>
+        <tr>
+          <td><label for="horizontal_products_max">Maximum number of products shown across page</label></td>
+          <td><input type="text" id="horizontal_products_max" name="horizontal_products_max" value="4"/></td>
+        </tr>
+    </table>
+  </fieldset>
+
+  <fieldset>
+    <legend>Images</legend>
+    <table>
+        <tr>
+          <td><label for="background_image">Main Background Image</label></td>
+          <td><input type="text" id="background_image" name="background_image" value="background.png"/></td>
+        </tr>
+        <tr>
+          <td><label for="header_image">Main Header Image</label></td>
+          <td><input type="text" id="header_image" name="header_image" value="header.jpg"/></td>
+        </tr>
+    </table>
+  </fieldset>
+
+  <fieldset>
+    <legend>Typography</legend>
+    <table>
+      <tr>
+        <td><label for="font_primary_size">Primary Font Size</label></td>
+        <td><input type="text" id="font_primary_size" name="font_primary_size" value="75%"/></td>
+      </tr>
+      <tr>
+        <td><label for="font_primary">Regular text</label></td>
+        <td>
+          <select class="font" name="font_primary" id="font_primary">
+            <option value="'futura-medium'">Futura Medium</option>
+            <option value="'Raleway'" selected="selected">Raleway</option>
+            <option value="'swlink'">swlink</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="font_button">Buttons</label></td>
+        <td>
+          <select class="font" name="font_button" id="font_button">
+            <option value="'futura-medium'">Futura Medium</option>
+            <option value="'Raleway'">Raleway</option>
+            <option value="'swlink'" selected="selected">swlink</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="font_nav">Navigation Lists</label></td>
+        <td>
+          <select class="font" name="font_nav" id="font_nav">
+            <option value="'futura-medium'">Futura Medium</option>
+            <option value="'Raleway'">Raleway</option>
+            <option value="'swlink'" selected="selected">swlink</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+
+
+  <fieldset>
+    <legend>Buttons</legend>
+    <table>
+      <tr>
+        <td><label for="button_bg_normal">Button Background Color - Normal</label></td>
+        <td><input type="text" id="button_bg_normal" name="button_bg_normal" /></td>
+      </tr>
+      <tr>
+        <td><label for="button_bg_hover">Button Background Color - Hover</label></td>
+        <td><input type="text" id="button_bg_hover" name="button_bg_hover" /></td>
+      </tr>
+    </table>
+  </fieldset>

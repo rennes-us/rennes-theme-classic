@@ -1,0 +1,68 @@
+{% if cart.item_count > 0 %}
+
+  <form id="cart-form" method="post" action="/cart">
+    <table id="cart-table">
+      <colgroup><col class="item-pic"><col class="item-text"><col class="price"><col class="qty"><col class="total"><col class="options"></colgroup>
+     
+      <thead>
+        <tr><th colspan="2">Item</th><th>Price</th><th>Qty</th><th>Total</th><th>Options</th></tr>
+      </thead>
+	  
+      <tbody>
+        {% for item in cart.items %}
+          <tr>
+            <td><img src="{{ item.product.images[0] | product_img_url: "medium" }}" alt="{{ item.title | escape }}"></td>
+            <th scope="row"><a href="{{ item.product.url }}">{{ item.title }}</a></th>
+            <td>{{ item.price | money }}</td>
+            <td><input type="text" class="field" name="updates[{{ item.id }}]" id="updates_{{ item.id }}" value="{{ item.quantity }}"></td>
+            <td>{{ item.line_price | money }}</td>
+            <td><a href="/cart/change/{{ item.variant.id }}?quantity=0" class="remove-btn" title="Remove Item">Remove</a></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+	  
+      <tfoot>
+        <tr id="total">
+          <td></td>
+          <th scope="row">Total:</th>
+          <td></td>
+          <td></td>
+          <td id="total-cost">{{ cart.total_price | money }}</td>
+          <td></td>
+        </tr>
+        <tr id="update-cart">
+          <td></td>
+          <td></td>
+          <td colspan="3">
+            <button name="update" value="update" type="submit" title="Update your total">Update Shopping Bag</button>
+          </td>
+          <td></td>
+        </tr>
+        {% if settings.away_mode %}
+        <tr id="checkout-warning-message">
+          <td></td>
+          <td colspan="4">
+            <label for="checkout-warning">
+              {{ settings.away_mode_message | escape}}
+              <input type="checkbox" id="checkout-warning" value="checkout-warning" required>
+            </label>
+          </td>
+        </tr>
+        {% endif %}
+        <tr id="checkout">
+          <td></td>
+          <td></td>
+          <td colspan="3">
+            <button type="submit" value="Check Out" name="checkout" title="Checkout">Checkout</button>
+          <td></td>
+        </tr>
+      </tfoot>
+	  
+    </table>
+  </form>
+
+{% else %}
+
+  <p class="alert-noitems">You don&#8217;t have any items in your bag. <a href="/collections/all">Start shopping &raquo;</a></p>
+
+{% endif %}

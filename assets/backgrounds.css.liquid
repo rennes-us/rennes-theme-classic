@@ -1,0 +1,17 @@
+/*
+ *
+ * Page Background Settings
+ *
+ */
+
+
+{% unless settings.front_page_show_items %}
+body#home-page
+{
+  	background-color: #fff;
+	background: url('{{settings.background_image | asset_url }}');
+	background-position: right 75px;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+}
+{% endunless %}

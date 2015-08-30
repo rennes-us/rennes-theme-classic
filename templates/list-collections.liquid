@@ -1,0 +1,12 @@
+    {% if collections.size > 0 %}
+    <h2>All Product Categories</h2>
+    <ul>
+      {% for collection in collections %}
+        <li class="{{ collection.handle }}-collection">
+          <a href="{{ collection.url }}">{{ collection.title | escape }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+      <p>No Collections found...</p>
+    {% endif %}

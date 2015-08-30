@@ -1,0 +1,35 @@
+<article itemscope itemtype="http://schema.org/Product">
+  <div id="product-images">
+    <a id="product-image"><img src="{{ product.images.first | product_img_url: 'grande' }}" alt="{{ product.featured_image.alt }}" itemprop="image"></a>
+    <div id="images-nav">
+      <ul id="images-list">
+        {% for image in product.images %}
+        <li><a href="{{ image | product_img_url: 'grande' }}"><img src="{{ image | product_img_url: 'small' }}" alt="{{ image.alt | escape }}"></a></li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div id="product-details">
+    <h1 itemprop="name">{{ product.title | escape }}</h1>
+    <div id="product-description" itemprop="description">
+      {{ product.description }}
+      <div itemprop="offers" itemscope itemtype="http://schema.org/Offer"><span itemprop="price">{{ product.price | money_without_trailing_zeros  }}</span></div>
+    </div>
+{% if product.tags contains 'Coming Soon' %}
+    <span id="soon" class="unavailable">Coming Soon</span>
+{% elsif product.available %}
+    <form id="product-form" action="/cart/add" method="post">
+{%  if product.variants.size > 1  %}     
+      <div id="product-variants">{% for variant in product.variants %}
+        <input type="radio" {% unless variant.available %} disabled="true" {% endunless %} name="id" id="{{variant.id}}" value="{{variant.id}}"><label for="{{variant.id}}">{{variant.title}}</label>{% endfor %}
+      </div>
+  {% else %}  
+      <input  type="hidden" id="{{ variant.id }}" name="id" value="{{ product.variants[0].id }}">
+  {% endif %}
+      <button id="product-addtocart" type="submit" name="add" value="Add to Shopping Cart">Add to bag</button>
+    </form>
+{% else %}
+  <span id="soldout" class="unavailable">Sold Out</span>
+{% endif %}
+  </div>
+</article>

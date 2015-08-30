@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% if template == "index" %}
+  <title>{{ shop.name  }}</title>
+{% elsif template contains "404" %}
+  <title>Page Not Found</title>
+{% else %}
+  <title>{{ shop.name }}  &mdash;  {{ page_title | escape }}</title>
+{% endif %}  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  {% assign maxmeta = 155 %}
+  {% if template contains 'product' %}
+  <meta name="description" content="{{ product.description | strip_html | strip_newlines | truncate: maxmeta | escape }}" >
+  {% elsif template contains 'page' %}
+  <meta name="description" content="{{ page.content | strip_html | strip_newlines | truncate: maxmeta | escape }}" >
+  {% elsif template == 'index' and shop.description != '' %}
+  <meta name="description" content="{{ shop.description | strip_html | strip_newlines | truncate: maxmeta | escape}}" >
+  {% elsif template contains 'collection' and collection.metafields.global.description_tag != '' %}
+  <meta name="description" content="{{ collection.metafields.global.description_tag  | strip_html | strip_newlines | truncate: maxmeta | escape}}">
+  {% endif %} 
+  <link rel="canonical" href="{{ canonical_url }}">
+{% include 'head' %}
+  
+  <!-- Shopify boilerplate gobbeldygook -->
+  
+  {{ content_for_header }}
+  
+  <!-- End Shopify boilerplate gobbeldygook -->
+  
+</head>
+  
+{% if collection.title.size > 0 %}
+<body id="products-page">
+{% elsif product.handle.size > 0 %}
+<body id="products-page">
+{% elsif page.handle.size > 0 %}
+<body id="{{ page.handle }}-page">
+{% else %}
+<body id="{{ page_title | handle }}-page">
+{% endif %}
+  
+<div id="wrap">
+  
+    <header>
+	  {% if cart.item_count > 0 %}
+	  <a id="cart-summary" href="/cart" title="View Cart">{{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items'}} in Bag</a>
+	  {% endif %}
+      <a id="home-link" href="/"><img src="{{ settings.header_image | asset_url }}" alt="rennes"></a>
+    </header>
+
+  {% include 'nav' %}
+  
+    <main>
+    {% if errors != blank %}
+      <div id="error" class="error">
+        <ul>
+          {% for error in errors %}<li>{{ error }}</li>{% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+    {{ content_for_layout }}
+    </main>
+      
+</div>
+
+  {% include 'footer' %}
+
+</body>
+</html>
