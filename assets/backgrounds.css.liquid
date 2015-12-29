@@ -27,15 +27,33 @@
 /* Used method from https://css-tricks.com/vertically-center-multi-lined-text/
  * (Tried the line-height method first but that didn't work for some reason.)
  */
-#splash span
+
+#splash > div
 {
-	padding-left: 1.2em;
-	letter-spacing: 1.2em;
 	text-transform: lowercase;
 	color: white;
 	text-align: center;
-	font-size: 500%;
 	/* For vertical text centering */
 	display: table-cell;
 	vertical-align: middle;
+}
+
+#splash .title
+{
+	font-size: 500%;
+	padding-left: 1.2em;
+	letter-spacing: 1.2em;
+}
+
+#splash .address
+{
+	padding-top: 3em;
+	padding-left: 0.5em;
+	letter-spacing: 0.5em;
+	font-size: 120%;
+}
+
+#splash .address > div
+{
+	padding-bottom: 1em;
 }
