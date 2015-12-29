@@ -39,14 +39,21 @@
 {% else %}
 <body id="{{ page_title | handle }}-page">
 {% endif %}
-  
+
+{% if page_title == "Home" %}
+<a id="splash" href=""><span>Rennes</span></a>
+{% endif %}
+
+
 <div id="wrap">
   
     <header>
 	  {% if cart.item_count > 0 %}
 	  <a id="cart-summary" href="/cart" title="View Cart">{{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items'}} in Bag</a>
 	  {% endif %}
-      <a id="home-link" href="/"><img src="{{ settings.header_image | asset_url }}" alt="rennes"></a>
+	  <a id="home-link" href="/collections/new">
+		  <img src="{{ settings.header_image | asset_url }}" alt="rennes">
+	  </a>
     </header>
 
   {% include 'nav' %}
