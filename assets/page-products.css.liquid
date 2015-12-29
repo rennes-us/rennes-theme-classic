@@ -3,8 +3,10 @@
 #products
 {
 	/* Show a min of 3 and max of 4 products per row; 60 is the 30px padding below times 2 */
-	max-width: {{settings.product_thumbnail_width | plus: 60 | times: settings.horizontal_products_max }}px;
-	min-width: {{settings.product_thumbnail_width | plus: 60 | times: settings.horizontal_products_min }}px;
+	/*max-width: {{settings.product_thumbnail_width | plus: 60 | times: settings.horizontal_products_max }}px;
+	min-width: {{settings.product_thumbnail_width | plus: 60 | times: settings.horizontal_products_min }}px;*/
+	/* TODO tidy up products-per-row math for fixed-width choice below */
+	width: 1080px;
 	margin-left: auto;
 	margin-right: auto;
 	overflow: auto;
@@ -13,7 +15,7 @@
 .product
 {
  	padding: 10px 30px;
-	height: 300px;
+	height: 350px;
 	float: left;
 }
 
@@ -56,6 +58,13 @@
 {
 	margin: 3px 0;
 	font-size: 80%;
+}
+
+/* Used to reference the "compare at" prices */
+.product-info del
+{
+	display: block;
+	color: gray;
 }
 
 #images-nav

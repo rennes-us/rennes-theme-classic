@@ -4,14 +4,56 @@
  *
  */
 
+/* TODO this splash image thing isn't really background */
 
-{% unless settings.front_page_show_items %}
-body#home-page
+#splash
 {
-  	background-color: #fff;
+	/* Background image: cover whole window as needed */
+	position: fixed;
+	left: 0;
+	top: 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
 	background: url('{{settings.background_image | asset_url }}');
-	background-position: right 75px;
+	background-position: center;
 	background-repeat: no-repeat;
-	background-size: auto 100%;
+	background-size: cover;
+	/* For the vertical text centering inside */
+	display: table;
+
 }
-{% endunless %}
+
+/* Used method from https://css-tricks.com/vertically-center-multi-lined-text/
+ * (Tried the line-height method first but that didn't work for some reason.)
+ */
+
+#splash > div
+{
+	text-transform: lowercase;
+	color: white;
+	text-align: center;
+	/* For vertical text centering */
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#splash .title
+{
+	font-size: 500%;
+	padding-left: 1.2em;
+	letter-spacing: 1.2em;
+}
+
+#splash .address
+{
+	padding-top: 3em;
+	padding-left: 0.5em;
+	letter-spacing: 0.5em;
+	font-size: 120%;
+}
+
+#splash .address > div
+{
+	padding-bottom: 1em;
+}

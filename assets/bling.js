@@ -2,8 +2,28 @@ $(document).ready(main);
 
 function main()
 {
-	setupTransitions(); // Slide away background when following links
+	setupSplashFade("#splash"); // Fade away splash image and fade in content
+	//setupTransitions(); // Slide away background when following links
 	setupToggleMenus(); // Slide sub-menus in and out when clicked
+}
+
+// Hide everything except for the full-window splash image.  When clicked, fade
+// away (and remove) the splash image, and fade in the content.
+function setupSplashFade(sel)
+{
+	if ($(sel).length)
+	{
+		var delay = 1000; // fade in/out duration in ms
+		$("body > *").hide();
+		$(sel).show();
+		$(sel).click(function() {
+			$(this).fadeOut(delay, function() {
+				$(this).remove();
+				$("body > *").fadeIn(delay);
+			});
+			return false;
+		});
+	}
 }
 
 // This will have the background image for the page slide to the left before

@@ -9,7 +9,13 @@
         <section id="product-{{ forloop.index }}" class="product" itemscope itemtype="http://schema.org/Product">
           <a href="{{ product.url | within: collection }}" title="View {{ product.title | escape }}" class="product-a" itemprop="url">
             <div class="product-image"><img src="{{ product.images.first | product_img_url : settings.product_thumbnail_size }}" alt="{{ product.title | escape }}" itemprop="image"></div>
-            <div class="product-info"><h2 itemprop="name">{{ product.title }}</h2><p itemprop="offers" itemscope itemtype="http://schema.org/Offer">{{ product.price | money }}</p></div>
+	    <div class="product-info">
+              <h2 itemprop="name">{{ product.title }}</h2>
+	      <p itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+	      <span itemprop="price">{{ product.price | money }}</span>
+              {% if product.compare_at_price_min > product.price %}<del>{{ product.compare_at_price_min | money_without_trailing_zeros }}</del>{% endif %}
+              </p>
+            </div>
           </a>
         </section>
 		{% endfor %}
