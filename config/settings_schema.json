@@ -73,6 +73,16 @@
         "id": "horizontal_products_max",
         "label": "Maximum number of products shown across page",
         "default": "4"
+      },
+      {
+        "type": "checkbox",
+        "id": "sale_banner_enabled",
+        "label": "Enable Sale Page Banner?"
+      },
+      {
+        "type": "text",
+        "id": "sale_banner_text",
+        "label": "Sale Page Banner Text"
       }
     ]
   },

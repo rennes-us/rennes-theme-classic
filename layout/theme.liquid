@@ -45,10 +45,6 @@
     <div>
       <div class="title">Rennes</div>
       <div class="address">
-        <div>visit:</div>
-        <div>49 river street, boston ma 02108</div>
-        <br>
-        <div>the winter sale is here!  take 30% off items in the sale section with code "wintersale"</div>
       </div>
     </div>
   </a>
@@ -58,6 +54,9 @@
 <div id="wrap">
   
     <header>
+      {% if collection.title.size > 0 and collection.handle == "sale" and settings.sale_banner_enabled %}
+      <div id="sale-banner">{{ settings.sale_banner_text }}</div>
+      {% endif %}
 	  {% if cart.item_count > 0 %}
 	  <a id="cart-summary" href="/cart" title="View Cart">{{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items'}} in Bag</a>
 	  {% endif %}

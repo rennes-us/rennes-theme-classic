@@ -5,6 +5,7 @@ function main()
 	setupSplashFade("#splash"); // Fade away splash image and fade in content
 	//setupTransitions(); // Slide away background when following links
 	setupToggleMenus(); // Slide sub-menus in and out when clicked
+	setupSaleBanner(); // Slide the banner on the sale page into view after page load
 }
 
 // Hide everything except for the full-window splash image.  When clicked, fade
@@ -79,4 +80,10 @@ function setupToggleMenus()
 			$(this).next().slideToggle();
 			return(false);
 			});
+}
+
+function setupSaleBanner()
+{
+	if ($("#sale-banner").length > 0)
+      setTimeout( function() {$("#sale-banner").slideDown(); }, 500);
 }
