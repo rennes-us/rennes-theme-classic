@@ -13,7 +13,6 @@
               <h2 itemprop="name">{{ product.title }}</h2>
 	      <p itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 	      <span itemprop="price">{{ product.price | money }}</span>
-              {% if product.compare_at_price_min > product.price %}<del>{{ product.compare_at_price_min | money_without_trailing_zeros }}</del>{% endif %}
               </p>
             </div>
           </a>
