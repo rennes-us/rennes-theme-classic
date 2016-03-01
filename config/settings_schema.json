@@ -59,20 +59,8 @@
       {
         "type": "text",
         "id": "product_thumbnail_width",
-        "label": "Actual width of product thumbnails in pixels",
-        "default": "210"
-      },
-      {
-        "type": "text",
-        "id": "horizontal_products_min",
-        "label": "Minimum number of products shown across page",
-        "default": "3"
-      },
-      {
-        "type": "text",
-        "id": "horizontal_products_max",
-        "label": "Maximum number of products shown across page",
-        "default": "4"
+        "label": "Max width of product thumbnails in pixels",
+        "default": "400"
       },
       {
         "type": "checkbox",
