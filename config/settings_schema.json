@@ -68,6 +68,11 @@
         "label": "Enable Sale Page Banner?"
       },
       {
+	"type": "checkbox",
+	"id": "sale_banner_everywhere",
+	"label": "Sale Page Banner on all Collections?"
+      },
+      {
         "type": "text",
         "id": "sale_banner_text",
         "label": "Sale Page Banner Text"

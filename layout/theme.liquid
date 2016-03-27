@@ -54,9 +54,9 @@
 <div id="wrap">
   
     <header>
-      {% if collection.title.size > 0 and collection.handle == "sale" and settings.sale_banner_enabled %}
+      {% if settings.sale_banner_enabled and collection.title.size > 0 %}{% if settings.sale_banner_everywhere or collection.handle == "sale" %}
       <div id="sale-banner">{{ settings.sale_banner_text }}</div>
-      {% endif %}
+      {% endif %}{% endif %}
 	  {% if cart.item_count > 0 %}
 	  <a id="cart-summary" href="/cart" title="View Cart">{{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items'}} in Bag</a>
 	  {% endif %}
