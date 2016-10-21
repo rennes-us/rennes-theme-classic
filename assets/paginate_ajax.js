@@ -1,5 +1,5 @@
-// Implement pagination via ajax, with optional automatic loading of more pages.
-// (Please don't be mad, Shopify, we're only autoloading one page!)
+// Implement pagination via ajax, with optional automatic loading of more pages
+// (not currently used).
 // 
 // 1.  Load a pageful of items.
 // 2.  Set a handler on the "next page" link to load next page via ajax:
@@ -13,9 +13,9 @@
 $(document).ready(paginate_ajax);
 
 var pagination = {};
-pagination.autoload = 1; // number of times to autoload more items 
+pagination.autoload = 0; // number of times to autoload more items (none right now)
 pagination.loaded   = 0; // number of *extra* pages loaded so far
-pagination.anchor   = "a#pagination"; // selector for the "next page" link
+pagination.anchor   = "#pagination > a"; // selector for the "next page" link
 pagination.products = "article#products"; // selector for product elements
 
 // Set up onClick handler to load next page of items via ajax instead of with a
@@ -42,7 +42,7 @@ function load_next(a)
   function success(data)
   {	
     // remove the old "next page" link
-    $(a).remove();
+    $(a).parent().remove();
     // extract the data for the additional items, and append it to the current
     // page.
     dom = $(data);
