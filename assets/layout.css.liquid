@@ -12,13 +12,9 @@ html, body
 body
 {
 	margin: 0;
+    min-width: 1280px;
 }
 
-
-#wrap
-{
-	min-height: 100%;
-}
 
 /* Header */
 
@@ -29,13 +25,17 @@ header
 
 #home-link
 {
-	display: block;
-	padding-top: 20px;
-	width: 280px; /* width of the contained image */
-	margin-left: auto;
-	margin-right: auto;
-	letter-spacing: 1.2em;
-	font-family: 'futura-medium';
+  text-align: center;
+  font-size: 220%;
+  color: #777;
+
+  display: block;
+  padding-top: 20px;
+  width: 280px; /* width of the contained image */
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: 1.2em;
+  font-family: 'garamond';
 }
 
 /* The cart items in the upper-right corner */
@@ -47,39 +47,39 @@ header
 }
 
 
-/* Category navigation */
+/* Category Navigation and Information Links */
 
-/* I don't think I actually use a nav tag anywhere... */
 nav
 {
-  float: left;
+	position: fixed;
 }
 
-ul#categories
+nav > ul
 {
-    float: left;
+  float: left;
 	padding: 0;
 	margin: 0;
 	padding-left: 10px;
-	width: 180px;
+  width: 100%;
+  padding-bottom: 30px;
 }
 
-ul#categories > li > a:hover
+nav > ul > li > a:hover
 {
 	font-weight: bold;
 }
 
-ul#categories > li
+nav > ul > li
 {
 	margin-bottom: 10px;
 }
 
-ul#categories li
+nav > ul li
 {
 	list-style-type: none;
 }
 
-ul#categories ul
+nav > ul ul
 {
 	display: none;
 	padding-left: 10px;
@@ -91,102 +91,108 @@ ul#categories ul
  * for a longer one.  There must be a tidier CSS (non-JS/non-server-side) way of
  * handling this.
  */
-ul#categories.black           a[href$="/leather-goods-color"] ~ ul,
-ul#categories.dots            a[href$="/leather-goods-color"] ~ ul,
-ul#categories.cream           a[href$="/leather-goods-color"] ~ ul,
-ul#categories.tan             a[href$="/leather-goods-color"] ~ ul,
-ul#categories.tobacco         a[href$="/leather-goods-color"] ~ ul,
-ul#categories.navy            a[href$="/leather-goods-color"] ~ ul,
-ul#categories.redwood         a[href$="/leather-goods-color"] ~ ul,
-ul#categories.teal            a[href$="/leather-goods-color"] ~ ul,
-ul#categories.red             a[href$="/leather-goods-color"] ~ ul,
-ul#categories.golden          a[href$="/leather-goods-color"] ~ ul,
-ul#categories.pink            a[href$="/leather-goods-color"] ~ ul,
-ul#categories.bags            a[href$="/leather-goods-item"] ~ ul,
-ul#categories.small-goods     a[href$="/leather-goods-item"] ~ ul,
-ul#categories.black           a[href$="/leather-goods"] ~ ul,
-ul#categories.dots            a[href$="/leather-goods"] ~ ul,
-ul#categories.cream           a[href$="/leather-goods"] ~ ul,
-ul#categories.tan             a[href$="/leather-goods"] ~ ul,
-ul#categories.tobacco         a[href$="/leather-goods"] ~ ul,
-ul#categories.navy            a[href$="/leather-goods"] ~ ul,
-ul#categories.redwood         a[href$="/leather-goods"] ~ ul,
-ul#categories.teal            a[href$="/leather-goods"] ~ ul,
-ul#categories.red             a[href$="/leather-goods"] ~ ul,
-ul#categories.golden          a[href$="/leather-goods"] ~ ul,
-ul#categories.pink            a[href$="/leather-goods"] ~ ul,
-ul#categories.bags            a[href$="/leather-goods"] ~ ul,
-ul#categories.small-goods     a[href$="/leather-goods"] ~ ul,
-/*ul#categories.bags            a[href$="/bags"] ~ ul,*/
-ul#categories.totes           a[href$="/bags"] ~ ul,
-ul#categories.duffles         a[href$="/bags"] ~ ul,
-ul#categories.pouches         a[href$="/pouches"] ~ ul,
-ul#categories[class*="pouch"] a[href$="/pouches"] ~ ul,
-ul#categories.dots            a[href$="/pouches"] ~ ul,
-ul#categories.unlined         a[href$="/pouches"] ~ ul,
-ul#categories.wallets         a[href$="/wallets"] ~ ul,
-ul#categories.clothing        a[href$="/clothing"] ~ ul,
-ul#categories.base-range      a[href$="/clothing"] ~ ul,
-ul#categories.brookes-boswell a[href$="/clothing"] ~ ul,
-ul#categories.elsa-esturgie   a[href$="/clothing"] ~ ul,
-ul#categories.esby            a[href$="/clothing"] ~ ul,
-ul#categories.rennes          a[href$="/clothing"] ~ ul,
-ul#categories.lauren-manoogian a[href$="/clothing"] ~ ul,
-ul#categories.sylvain-le-hen  a[href$="/clothing"] ~ ul,
-ul#categories.khadi           a[href$="/clothing"] ~ ul,
-ul#categories.maryam-nassir-zadeh a[href$="/clothing"] ~ ul,
-ul#categories.samuji          a[href$="/clothing"] ~ ul,
-ul#categories.dresses         a[href$="/clothing"] ~ ul,
-ul#categories.tops            a[href$="/clothing"] ~ ul,
-ul#categories.home-goods      a[href$="/home-goods"] ~ ul,
-ul#categories.ceramics        a[href$="/home-goods"] ~ ul,
-ul#categories.dish-towels     a[href$="/home-goods"] ~ ul,
-ul#categories.pillows         a[href$="/home-goods"] ~ ul
+nav > ul.black           a[href$="/leather-goods-color"] ~ ul,
+nav > ul.dots            a[href$="/leather-goods-color"] ~ ul,
+nav > ul.cream           a[href$="/leather-goods-color"] ~ ul,
+nav > ul.tan             a[href$="/leather-goods-color"] ~ ul,
+nav > ul.navy            a[href$="/leather-goods-color"] ~ ul,
+nav > ul.redwood         a[href$="/leather-goods-color"] ~ ul,
+nav > ul.teal            a[href$="/leather-goods-color"] ~ ul,
+nav > ul.red             a[href$="/leather-goods-color"] ~ ul,
+nav > ul.pink            a[href$="/leather-goods-color"] ~ ul,
+nav > ul.bags            a[href$="/leather-goods-item"] ~ ul,
+nav > ul.small-goods     a[href$="/leather-goods-item"] ~ ul,
+nav > ul.black           a[href$="/leather-goods"] ~ ul,
+nav > ul.dots            a[href$="/leather-goods"] ~ ul,
+nav > ul.cream           a[href$="/leather-goods"] ~ ul,
+nav > ul.tan             a[href$="/leather-goods"] ~ ul,
+nav > ul.navy            a[href$="/leather-goods"] ~ ul,
+nav > ul.redwood         a[href$="/leather-goods"] ~ ul,
+nav > ul.teal            a[href$="/leather-goods"] ~ ul,
+nav > ul.red             a[href$="/leather-goods"] ~ ul,
+nav > ul.pink            a[href$="/leather-goods"] ~ ul,
+nav > ul.bags            a[href$="/leather-goods"] ~ ul,
+nav > ul.small-goods     a[href$="/leather-goods"] ~ ul,
+/*nav > ul.bags            a[href$="/bags"] ~ ul,*/
+nav > ul.totes           a[href$="/bags"] ~ ul,
+nav > ul.duffles         a[href$="/bags"] ~ ul,
+nav > ul.pouches         a[href$="/pouches"] ~ ul,
+nav > ul[class*="pouch"] a[href$="/pouches"] ~ ul,
+nav > ul.dots            a[href$="/pouches"] ~ ul,
+nav > ul.wallets         a[href$="/wallets"] ~ ul,
+nav > ul.clothing      a[href$="/clothing"] ~ ul,
+nav > ul.tops          a[href$="/clothing"] ~ ul,
+nav > ul.dresses       a[href$="/clothing"] ~ ul,
+nav > ul.pants         a[href$="/clothing"] ~ ul,
+nav > ul.skirts        a[href$="/clothing"] ~ ul,
+nav > ul.sweaters      a[href$="/clothing"] ~ ul,
+nav > ul.coats         a[href$="/clothing"] ~ ul,
+nav > ul.neck          a[href$="/clothing"] ~ ul,
+nav > ul.for-your-hair a[href$="/clothing"] ~ ul,
+nav > ul.bits-and-bobs a[href$="/clothing"] ~ ul,
+nav > ul.designers           a[href$="/designers"] ~ ul,
+nav > ul.rennes              a[href$="/designers"] ~ ul,
+nav > ul.anaak               a[href$="/designers"] ~ ul,
+nav > ul.base-range          a[href$="/designers"] ~ ul,
+nav > ul.caron-callahan      a[href$="/designers"] ~ ul,
+nav > ul.cosmic-wonder       a[href$="/designers"] ~ ul,
+nav > ul.elsa-esturgie       a[href$="/designers"] ~ ul,
+nav > ul.evam-eva            a[href$="/designers"] ~ ul,
+nav > ul.gallego-desportes   a[href$="/designers"] ~ ul,
+nav > ul.giu-giu             a[href$="/designers"] ~ ul,
+nav > ul.ichi                a[href$="/designers"] ~ ul,
+nav > ul.khadi               a[href$="/designers"] ~ ul,
+nav > ul.lauren-manoogian    a[href$="/designers"] ~ ul,
+nav > ul.makie               a[href$="/designers"] ~ ul,
+nav > ul.martiniano          a[href$="/designers"] ~ ul,
+nav > ul.maryam-nassir-zadeh a[href$="/designers"] ~ ul,
+nav > ul.pip-squeak-chapeau  a[href$="/designers"] ~ ul,
+nav > ul.pla                 a[href$="/designers"] ~ ul,
+nav > ul.samuji              a[href$="/designers"] ~ ul,
+nav > ul.sylvain-le-hen      a[href$="/designers"] ~ ul,
+nav > ul.wrk-shp-1           a[href$="/designers"] ~ ul,
+nav > ul.home-goods      a[href$="/home-goods"] ~ ul,
+nav > ul.ceramics        a[href$="/home-goods"] ~ ul,
+nav > ul.dish-towels     a[href$="/home-goods"] ~ ul,
+nav > ul.pillows         a[href$="/home-goods"] ~ ul
 {
 	display: block;
 }
 
-/* Stuff */
-
 main
 {
-	/* Minimum of effective width of nav above */
-	margin-left: 190px;
-	margin-right: 190px;
-    /* Needs at least enough padding at the bottom to account for the footer,
-     * since that won't take up space in a normal way. Should be the same as
-     * the margin-top of the footer's ul.  */
-	padding-bottom: 5em;
+	margin-left: 120px;
+	margin-right: 120px;
 }
 
-/* Footer links */
+/* Instagram feed display */
 
-/* http://www.cssstickyfooter.com/ */
-footer > ul
+#instafeed
 {
-    /* top margin is the negative of the total height of the box; this pins the
-     * element at the bottom of the parent element. padding-top plus height should
-     * equal margin-top (negative).  */
-	padding: 0;
-	margin: 0;
-	margin-top: -5em;
-	padding-top: 2em;
-	height: 3em;
-    /* Clear the floating navbar, if the footer ever actually reaches it */
-	clear: both;
-}
-
-footer > ul li
-{
-	display: inline;
-	list-style-type: none;
-	margin-left: 15px;
-}
-
-footer > ul ul
-{
-	display: none;
+	text-align: center;
+	padding-bottom: 40px;
+	padding-top: 40px;
+/*	border-top: 1px solid lightgray;*/
 	position: relative;
-	margin-top: -2em;
-	bottom: 1em;
+}
+
+#instafeed p
+{
+	font-size: 130%;
+}
+
+#instafeed img
+{
+	width: 200px;
+}
+
+/* SO 4131490 */
+#instafeed:after
+{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 20%;
+	width: 60%;
+	border-top: 1px solid lightgray;
 }

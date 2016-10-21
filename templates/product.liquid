@@ -1,10 +1,10 @@
 <article itemscope itemtype="http://schema.org/Product">
   <div id="product-images">
-    <a id="product-image"><img src="{{ product.images.first | product_img_url: 'grande' }}" alt="{{ product.featured_image.alt }}" itemprop="image"></a>
+    <a id="product-image"><img src="{{ product.images.first | product_img_url: settings.product_thumbnail_size }}" alt="{{ product.featured_image.alt }}" itemprop="image"></a>
     <div id="images-nav">
       <ul id="images-list">
         {% for image in product.images %}
-        <li><a href="{{ image | product_img_url: 'grande' }}"><img src="{{ image | product_img_url: 'small' }}" alt="{{ image.alt | escape }}"></a></li>
+        <li><a href="{{ image | product_img_url: settings.product_thumbnail_size }}"><img src="{{ image | product_img_url: settings.product_thumbnail_size }}" alt="{{ image.alt | escape }}"></a></li>
       {% endfor %}
       </ul>
     </div>

@@ -18,7 +18,9 @@
   <meta name="description" content="{{ shop.description | strip_html | strip_newlines | truncate: maxmeta | escape}}" >
   {% elsif template contains 'collection' and collection.metafields.global.description_tag != '' %}
   <meta name="description" content="{{ collection.metafields.global.description_tag  | strip_html | strip_newlines | truncate: maxmeta | escape}}">
-  {% endif %} 
+  {% endif %}
+  <!-- TODO template the site verification string -->
+  <meta name="google-site-verification" content="EpfeWwtVElUo_uESz-lSJN0B89D38gp5KfOQ3Yz0mTs" >
   <link rel="canonical" href="{{ canonical_url }}">
 {% include 'head' %}
   
@@ -50,18 +52,23 @@
   </a>
 {% endif %}
 
-
-<div id="wrap">
   
     <header>
       {% if settings.sale_banner_enabled and collection.title.size > 0 %}{% if settings.sale_banner_everywhere or collection.handle == "sale" %}
       <div id="sale-banner">{{ settings.sale_banner_text }}</div>
       {% endif %}{% endif %}
+      <a id="cart-summary" href="/cart" title="View Cart">
 	  {% if cart.item_count > 0 %}
-	  <a id="cart-summary" href="/cart" title="View Cart">{{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items'}} in Bag</a>
+	  {{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items'}} in Bag
+      {% else %}
+      My Bag
 	  {% endif %}
+      </a>
 	  <a id="home-link" href="/collections/new">
+        rennes
+        <!--
 		  <img src="{{ settings.header_image | asset_url }}" alt="rennes">
+-->
 	  </a>
     </header>
 
@@ -78,10 +85,6 @@
 
     {{ content_for_layout }}
     </main>
-      
-</div>
-
-  {% include 'footer' %}
 
 </body>
 </html>

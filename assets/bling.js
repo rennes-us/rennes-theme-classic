@@ -3,7 +3,6 @@ $(document).ready(main);
 function main()
 {
 	setupSplashFade("#splash"); // Fade away splash image and fade in content
-	//setupTransitions(); // Slide away background when following links
 	setupToggleMenus(); // Slide sub-menus in and out when clicked
 	setupSaleBanner(); // Slide the banner on the sale page into view after page load
 }
@@ -25,25 +24,6 @@ function setupSplashFade(sel)
 			return false;
 		});
 	}
-}
-
-// This will have the background image for the page slide to the left before
-// loading the target of the link.  It gets added to all the links in the
-// categories list.
-// http://www.onextrapixel.com/2010/02/23/how-to-use-jquery-to-make-slick-page-transitions/
-function setupTransitions()
-{
-	var delay = 500;
-	setupTransitionsFor("#categories a", delay);
-	setupTransitionsFor(".hideyoshie", delay);
-	// Remove this effect from the sub-menu links, since they should just
-	// show/hide those instead.
-	// This could probably be done in one step above using jQuery's
-	// filter() method, but whatever.
-	a = $("#categories ul").prev();
-	a.unbind();
-	a = $("footer > ul > li > ul").prev();
-	a.unbind();
 }
 
 function setupTransitionsFor(el, delay)
@@ -70,16 +50,16 @@ function moveYoshie(delay)
 // This will make sub-menus slide up/down.
 function setupToggleMenus()
 {
-	var a = $("#categories ul").prev();
+	var a = $("nav ul ul").prev();
 	a.click(function(){
 			$(this).next().slideToggle();
 			return(false);
 			});
-	a = $("footer > ul > li > ul").prev();
-	a.click(function(){
-			$(this).next().slideToggle();
-			return(false);
-			});
+	//a = $("footer > ul > li > ul").prev();
+	//a.click(function(){
+	//		$(this).next().slideToggle();
+	//		return(false);
+	//		});
 }
 
 function setupSaleBanner()
