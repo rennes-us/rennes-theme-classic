@@ -1,7 +1,7 @@
 {% if collections.new.products.size != 0 %}
       <article id="products">
         
-{% paginate collections.new.products by 50 %}
+{% paginate collections.new.products by 30 %}
         
         {% for product in collections.new.products %}
 
@@ -14,7 +14,7 @@
 		{% endfor %}
  
     {% if paginate.next.is_link %}
-    <a href="{{ paginate.next.url }}" id="pagination">{{ paginate.next.title }}</a>
+        <p id="pagination"><a href="{{ paginate.next.url }}">I'd like to see more</a></p>
 	{% endif %}
         
 {% endpaginate %}
@@ -22,3 +22,4 @@
       </article>
 
 {% endif %}
+{% include 'instafeed' %}

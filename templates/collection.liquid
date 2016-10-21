@@ -2,7 +2,7 @@
 
       <article id="products">
         
-{% paginate collection.products by 50 %}
+{% paginate collection.products by 30 %}
         
         {% for product in collection.products %}
 
@@ -20,7 +20,7 @@
 		{% endfor %}
  
     {% if paginate.next.is_link %}
-    <a href="{{ paginate.next.url }}" id="pagination">{{ paginate.next.title }}</a>
+        <p id="pagination"><a href="{{ paginate.next.url }}">I'd like to see more</a></p>
 {% endif %}
         
 {% endpaginate %}
@@ -34,3 +34,4 @@
 <p class="alert-noproducts"><span>No products found.</span></p>
 
 {% endif %}
+{% include 'instafeed' %}
