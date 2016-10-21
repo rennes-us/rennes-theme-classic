@@ -5,4 +5,4 @@ This work is licensed under a <a rel="license" href="http://creativecommons.org/
 
 ## Credits
 
- * Instagram feed via [Instafeed.js][http://instafeedjs.com]
+ * Instagram feed via [Instafeed.js](http://instafeedjs.com)
