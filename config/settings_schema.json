@@ -190,6 +190,10 @@
         "label": "Buttons",
         "options": [
           {
+            "value": "'lora'",
+            "label": "Lora"
+          },
+          {
             "value": "'futura-medium'",
             "label": "Futura Medium"
           },
@@ -264,6 +268,10 @@
         "id": "font_nav",
         "label": "Navigation Lists",
         "options": [
+          {
+            "value": "'lora'",
+            "label": "Lora"
+          },
           {
             "value": "'futura-medium'",
             "label": "Futura Medium"
