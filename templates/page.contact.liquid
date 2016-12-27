@@ -1,61 +1,19 @@
 <div id="contact">
 
-  <p>
-  Questions?  Please get in touch via email: info@rennes.us or use the form below.
-  </p>
+  <section>
   {{ page.content }}
-  
-<div id="inquiry">
-{% form 'contact' %}
+  </section>
+  <section>
 
+    <p>Please join our mailing list for shop updates, news, sales, and events:</p>
 
-{% if form.posted_successfully? %}
-<div class="successForm feedback">
-  <p>Thanks for contacting us! We'll get back to you as soon as possible.</p>
-</div>
-{% endif %}
+    <form action="//blogspot.us1.list-manage.com/subscribe/post?u=9810dca25b878830d9fe3913f&amp;id=1a20dc9c7e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="mailchimp validate" target="_blank">
+      <label for="mce-EMAIL">
+        Email:
+      </label>
+      <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" tabindex="5">
+      <button name="subscribe" type="submit" tabindex="6">Join</button>
+    </form>
+  </section>
 
-{% if form.errors %}
-<div class="errorForm feedback">
-  <p>Oops, sorry. We were unable to submit your inquiry because it contained {{ form.errors | size | pluralize: 'an error', 'a few errors' }}. Please correct the following and submit again:</p>
-  {% for field in form.errors %}
-    <p>The {{ field | capitalize | replace: 'Body', 'Message' }} field {{ form.errors.messages[field] }}.</p>
-  {% endfor %}
-</div>
-{% endif %}
-  
-<div class="inputs">
-<label for="contactFormName">
-  Name: 
-  <input id="contactFormName" name="contact[name]" tabindex="1" type="text" value="">
-</label>
-<label for="contactFormEmail">
-  Email:
-  <input id="contactFormEmail" name="contact[email]" tabindex="2" type="email" value="">
-</label>
-<label for="contactFormMessage">
-  Inquiry:
-  <input id="contactFormMessage" name="contact[body]" tabindex="3" type="text" value="">
-</label>
-</div>
-<button id="contactFormSubmit" name="submit" tabindex="4" type="submit">Send</button>
-
-
-{% endform %}
-  
-</div>
-  
-<p>Please join our mailing list for shop updates, news, sales, and events:</p>
-
-<form action="//blogspot.us1.list-manage.com/subscribe/post?u=9810dca25b878830d9fe3913f&amp;id=1a20dc9c7e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="mailchimp validate" target="_blank">
-  <div class="inputs">
-  <label for="mce-EMAIL">
-    Email:
-    <input type="text" value="" name="EMAIL" class="required email" id="mce-EMAIL" tabindex="5">
-  </label>
-  </div>
-  <button name="subscribe" type="submit" tabindex="6">Join</button>
-</form>
-  
-  
 </div>
