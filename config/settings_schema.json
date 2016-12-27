@@ -68,9 +68,9 @@
         "label": "Enable Sale Page Banner?"
       },
       {
-	"type": "checkbox",
-	"id": "sale_banner_everywhere",
-	"label": "Sale Page Banner on all Collections?"
+        "type": "checkbox",
+        "id": "sale_banner_everywhere",
+        "label": "Sale Page Banner on all Collections?"
       },
       {
         "type": "text",
@@ -110,6 +110,10 @@
         "id": "font_primary",
         "label": "Regular text",
         "options": [
+          {
+            "value": "'lora'",
+            "label": "Lora"
+          },
           {
             "value": "'futura-medium'",
             "label": "Futura Medium"
