@@ -21,7 +21,7 @@
 {% if product.tags contains 'Coming Soon' %}
     <span class="unavailable">Coming Soon</span>
 {% elsif product.available %}
-    <form id="product-form" action="/cart/add" method="post">
+    <form action="/cart/add" method="post">
 {% if product.variants.size > 1 %}
       <div id="product-variants">{% for variant in product.variants %}
         <input type="radio" {% unless variant.available %} disabled="true" {% endunless %} name="id" id="{{variant.id}}" value="{{variant.id}}"><label for="{{variant.id}}">{{variant.title}}</label>{% endfor %}

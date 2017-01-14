@@ -36,13 +36,13 @@ function preload(el)
 
 function setupVariantCheck()
 {
-	if ($("form#product-form #product-variants").length > 0)
+	if ($("form #product-variants").length > 0)
 		$("button#product-addtocart").click(function() {return addCartHandler();});
 }
 
 function addCartHandler()
 {
-	if ($('form#product-form #product-variants input[type="radio"]:checked').length > 0)
+	if ($('form #product-variants input[type="radio"]:checked').length > 0)
 		return true;
 	else
     {
