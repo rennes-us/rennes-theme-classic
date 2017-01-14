@@ -11,28 +11,35 @@
   </div>
   <div id="product-details">
     <h1 itemprop="name">{{ product.title | escape }}</h1>
-    <div id="product-description" itemprop="description">
+    <div itemprop="description">
       {{ product.description }}
       <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-	<span itemprop="price">{{ product.price | money_without_trailing_zeros  }}</span>
+        <span itemprop="price">{{ product.price | money_without_trailing_zeros }}</span>
         {% if product.compare_at_price_min > product.price %}<del>{{ product.compare_at_price_min | money_without_trailing_zeros }}</del> {% endif %}
       </div>
     </div>
 {% if product.tags contains 'Coming Soon' %}
-    <span id="soon" class="unavailable">Coming Soon</span>
+    <span class="unavailable">Coming Soon</span>
 {% elsif product.available %}
     <form id="product-form" action="/cart/add" method="post">
-{%  if product.variants.size > 1  %}     
+{% if product.variants.size > 1 %}
       <div id="product-variants">{% for variant in product.variants %}
         <input type="radio" {% unless variant.available %} disabled="true" {% endunless %} name="id" id="{{variant.id}}" value="{{variant.id}}"><label for="{{variant.id}}">{{variant.title}}</label>{% endfor %}
       </div>
-  {% else %}  
-      <input  type="hidden" id="{{ variant.id }}" name="id" value="{{ product.variants[0].id }}">
-  {% endif %}
+{% else %}
+      <input type="hidden" id="{{ variant.id }}" name="id" value="{{ product.variants[0].id }}">
+{% endif %}
       <button id="product-addtocart" type="submit" name="add" value="Add to Shopping Cart">Add to bag</button>
     </form>
 {% else %}
-  <span id="soldout" class="unavailable">Sold Out</span>
+    <span id="soldout" class="unavailable">Sold Out</span>
+{% endif %}
+{% assign col_handles = product.collections | map: 'handle' %}{% if col_handles contains "sale" %}
+    <p>
+      All sale items are final sale and cannot be returned or exchanged.
+      Please feel free to email us with any fit questions at info@rennes.us and
+      we will be happy to help with sizing.
+    </p>
 {% endif %}
   </div>
 </article>
