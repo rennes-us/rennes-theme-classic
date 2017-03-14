@@ -42,6 +42,10 @@
 <body id="{{ page_title | handle }}-page">
 {% endif %}
 
+{% comment %}
+Note that this depends on the homepage title being set to "Home" in the store
+preferences.  maybe use something like what template we're in instead?
+{% endcomment %}
 {% if page_title == "Home" %}
   <a id="splash" href="">
     <div>
