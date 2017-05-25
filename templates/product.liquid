@@ -4,7 +4,7 @@
     <div id="images-nav">
       <ul id="images-list">
         {% for image in product.images %}
-        <li><a href="{{ image | product_img_url: settings.product_thumbnail_size }}"><img src="{{ image | product_img_url: settings.product_thumbnail_size }}" alt="{{ image.alt | escape }}"></a></li>
+        <li><a href="{{ image | product_img_url: settings.product_thumbnail_size }}"><img id="image-{{image.id}}" src="{{ image | product_img_url: settings.product_thumbnail_size }}" alt="{{ image.alt | escape }}"></a></li>
       {% endfor %}
       </ul>
     </div>
