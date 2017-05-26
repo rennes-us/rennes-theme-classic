@@ -1,0 +1,37 @@
+/*
+ * From:
+ * https://www.fontsquirrel.com/fonts/lora
+ * https://www.fontsquirrel.com/tools/webfont-generator
+ */
+
+/* regular */
+@font-face {
+  font-family: 'lora';
+  src: url({{ 'font-lora-regular-webfont.woff2' | asset_url }}) format('woff2');
+  src: url({{ 'font-lora-regular-webfont.woff'  | asset_url }}) format('woff');
+}
+
+/* bold */
+@font-face {
+  font-family: 'lora';
+  src: url({{ 'font-lora-bold-webfont.woff2' | asset_url }}) format('woff2');
+  src: url({{ 'font-lora-bold-webfont.woff'  | asset_url }}) format('woff');
+  font-weight: bold;
+}
+
+/* italic */
+@font-face {
+  font-family: 'lora';
+  src: url({{ 'font-lora-italic-webfont.woff2' | asset_url }}) format('woff2');
+  src: url({{ 'font-lora-italic-webfont.woff'  | asset_url }}) format('woff');
+  font-style: italic;
+}
+
+/* bold italic */
+@font-face {
+  font-family: 'lora';
+  src: url({{ 'font-lora-bolditalic-webfont.woff2' | asset_url }}) format('woff2');
+  src: url({{ 'font-lora-bolditalic-webfont.woff'  | asset_url }}) format('woff');
+  font-weight: bold;
+  font-style: italic;
+}

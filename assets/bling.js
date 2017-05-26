@@ -65,5 +65,5 @@ function setupToggleMenus()
 function setupSaleBanner()
 {
 	if ($("#sale-banner").length > 0)
-      setTimeout( function() {$("#sale-banner").slideDown(); }, 500);
+		setTimeout( function() {$("#sale-banner").slideDown(); }, 500);
 }
